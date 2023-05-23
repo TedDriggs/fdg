@@ -55,7 +55,7 @@ impl ForceGraphSimulator {
         Self { sim }
     }
 
-    #[wasm_bindgen(method, setter, js_name = "graph")]
+    #[wasm_bindgen(setter, js_name = "graph")]
     pub fn set_graph(&mut self, json: JsValue) -> Result<(), JsError> {
         let inner_graph: Value = match serde_wasm_bindgen::from_value(json) {
             Ok(json) => json,
